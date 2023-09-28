@@ -26,18 +26,18 @@ Constraints:
 1 <= s.length <= 104
 s consists of parentheses only '()[]{}'
 
-## Analisis / Pseudocodigo
+# Analisis / Pseudocodigo
 
-### Idea rapida
+## Idea rapida
 
 Leyendo el problema especifica que deben estar en el mismo nivel, entonces no se evaluaria expresiones como "([])" (esto tendria que devolver true) _PSDT:Si se tiene que evaluar esas expresiones_
 
-_Primer intento:_ Mediantes ifs evaluar si hay un parentesis de apertura debe de haber uno de cierre de segunda posicion
+## _Primer intento:_ Mediantes ifs evaluar si hay un parentesis de apertura debe de haber uno de cierre de segunda posicion
 
 ### _Codigo:_
 
 ```
-et valid = true
+let valid = true
   let i = 0
 
   while (i < s.length && valid) {
@@ -52,7 +52,9 @@ et valid = true
   return valid
 ```
 
-_Segundo intento:_ Utilizar un Map(). \nEn lugar de ocupar un map, ocupe un array donde guardaba el signo contrario al parentesis que recibia si era un parentesis de apertura.
+## _Segundo intento:_ Utilizar un Map().
+
+En lugar de ocupar un map, ocupe un array donde guardaba el signo contrario al parentesis que recibia si era un parentesis de apertura.
 Ej. s[i] = '(' entonces arr[i] = ')'
 
 ### _Codigo:_
