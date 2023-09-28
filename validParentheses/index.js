@@ -1,5 +1,21 @@
 function isValid(s) {
-  let aux = 0
+  let stack = []
 
-  for (let i = 0; i < s.length; i++) {}
+  if (s.length <= 1) return false
+
+  for (let element of s) {
+    if (element === '(') {
+      stack.push(')')
+    } else if (element === '{') {
+      stack.push('}')
+    } else if (element === '[') {
+      stack.push(']')
+    } else if (stack.pop() !== element) {
+      return false
+    }
+  }
+
+  return !stack.length
 }
+
+console.log(isValid('(){[]}'))
